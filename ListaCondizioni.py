@@ -9,7 +9,7 @@ input = input.replace(" ", "")
 
 lista = input.split(",")
 
-listaCondizionata = ""
+as = ""
 
 for i in range(len(lista)):
     lista[i] = int(lista[i])
