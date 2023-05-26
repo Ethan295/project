@@ -1,8 +1,4 @@
 
-
-
-
-
 def ordinamento(lista):
     listaOrdinata = []
     minimo = lista[0]
@@ -20,8 +16,4 @@ def ordinamento(lista):
 
 lista = [1, 34, 6, 213, 7, 976]
 ordinamento(lista)
-
-
-
-
 
