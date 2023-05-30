@@ -1,6 +1,9 @@
 class Stufa:
     accesa = False
 
+    def __init__(self):
+        self.accesa = False
+
     def Acecendi(self):
         self.accesa = True
 
