@@ -1,0 +1,47 @@
+[
+    {
+        "nome": "Prodotto 1",
+        "prezzo": 10.99,
+        "quantita": 5
+    },
+    {
+        "nome": "Prodotto 2",
+        "prezzo": 7.99,
+        "quantita": 10
+    },
+    {
+        "nome": "Prodotto 3",
+        "prezzo": 5.99,
+        "quantita": 3
+    },
+    {
+        "nome": "Prodotto 1",
+        "prezzo": 10.99,
+        "quantita": 5
+    },
+    {
+        "nome": "Prodotto 2",
+        "prezzo": 7.99,
+        "quantita": 10
+    },
+    {
+        "nome": "Prodotto 3",
+        "prezzo": 5.99,
+        "quantita": 3
+    },
+    {
+        "nome": "acqua",
+        "prezzo": "123",
+        "quantita": "232"
+    },
+    {
+        "nome": "pane",
+        "prezzo": "21",
+        "quantita": "4234"
+    },
+    {
+        "nome": "carne",
+        "prezzo": "23",
+        "quantita": "123123"
+    }
+]
