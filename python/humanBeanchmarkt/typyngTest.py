@@ -1,3 +1,5 @@
+#funziona male
+
 import pyautogui
 import easyocr
 import time
@@ -42,7 +44,8 @@ print(text)
 
 # Elimina l'immagine
 os.remove(image_path)
-#os.remove("preprocessed.png")
+os.remove("preprocessed.png")
 
 # Inserisci il testo riconosciuto nel campo desiderato (rimuovi il commento se necessario)
-#pyautogui.write(text, interval=0.07)
+time.sleep(1)
+pyautogui.write(text, interval=0.01)
