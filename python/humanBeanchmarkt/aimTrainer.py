@@ -1,14 +1,31 @@
 import pyautogui
 import os
+from PIL import Image
+import time
 
-# Take a screenshot of the region between (850, 200) and (1750, 600)
-screenshot = pyautogui.screenshot(region=(850, 200, 900, 400))
+# Definisci le coordinate della regione dello screenshot
+x1, y1, x2, y2 = 800, 150, 1800, 650
 
-# Check if the "bersaglio.png" image is present in the screenshot
-if pyautogui.locateOnScreen('bersaglio.png', region=(0, 0, 900, 400), grayscale=True, confidence=0.8) is not None:
-    # Click on the center of the "bersaglio.png" image
-    target_location = pyautogui.locateCenterOnScreen('bersaglio.png', region=(0, 0, 900, 400), grayscale=True, confidence=0.8)
-    pyautogui.click(target_location)
 
-# Delete the screenshot file
-os.remove(screenshot.filename)
+search = region=(x1, y1, x2 - x1, y2 - y1)
+
+clic_effettuati = 0
+
+time.sleep(1)
+
+pyautogui.click(1250, 400)
+
+
+
+while clic_effettuati < 31:
+
+        screenshot = pyautogui.screenshot(region=(x1, y1, x2 - x1, y2 - y1))
+
+        target_location = pyautogui.locateOnScreen('python/humanBeanchmarkt/bersaglio.png', region=(x1, y1, x2 - x1, y2 - y1), grayscale=True, confidence=0.8)
+
+        if target_location is not None:
+            pyautogui.click(pyautogui.center(target_location))
+            clic_effettuati += 1
+             
+
+
