@@ -23,6 +23,9 @@ positions_to_click = []
 round = 0
 
 pyautogui.click(1270, 530)
+
+
+#cambiare range per fare più livelli
 for i in range(0, 11):
     
     
