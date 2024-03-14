@@ -1,0 +1,51 @@
+#containerSotto {
+    padding: 0% 12%;
+}
+
+
+#pig {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#pig:active {
+    transform: scale(0.95);
+    /* Rimpicciolisci leggermente l'immagine */
+}
+
+
+
+
+
+.explosion {
+    position: absolute;
+    animation: explode 0.8s forwards;
+    pointer-events: none;
+    /* Imposta l'elemento come non interattivo */
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1.4);
+        opacity: 0.8;
+    }
+}
+
+.ham-img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.ham-counter {
+    position: absolute;
+    top: -20px;
+    left: 12px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
+}
