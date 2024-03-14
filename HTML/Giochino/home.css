@@ -1,7 +1,22 @@
-#containerSotto {
-    padding: 0% 12%;
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
 }
 
+#containerPrincipale {
+    height: 100%;
+
+    background: repeating-conic-gradient(from 45deg, #00a0a0 0% 25%, rgb(0, 180, 180, 1) 0% 50%);
+    background-size: 10px 10px;
+    background-color: rgb(0, 180, 180, 1);
+}
+
+#containerSotto {
+    padding: 0% 4%;
+}
 
 #pig {
     cursor: pointer;
@@ -12,6 +27,53 @@
     transform: scale(0.95);
     /* Rimpicciolisci leggermente l'immagine */
 }
+
+#containerPig {
+    padding: 100px 0;
+    text-align: center;
+}
+
+
+#totalHamRow {
+    padding-bottom: 50px;
+    text-align: center;
+    font-size: 40px;
+}
+
+
+.upgrades {
+    text-align: center;
+    border: 2px solid black; 
+    box-shadow: 10px;
+    background-color: aqua;
+    height: 70px;
+    align-items: center
+}
+
+.upgradeButtons{
+    width: 100px;
+    height: 50px;
+    background-color: green;
+    color: white;
+    border-radius: 15px;
+    border: 3px solid black;
+}
+
+.upgradeButtons:active {
+
+    transform: scale(0.95);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -48,4 +110,20 @@
     color: rgb(0, 0, 0);
     font-size: 16px;
     font-weight: bold;
+}
+
+
+
+
+
+
+#footer {
+    padding: 20px 0 0 0;
+    /* padding sopra e sotto il footer */
+    position: fixed;
+    /* posizione fissa in basso */
+    width: 100%;
+    /* larghezza del footer */
+    bottom: 0;
+    /* posiziona il footer in fondo */
 }

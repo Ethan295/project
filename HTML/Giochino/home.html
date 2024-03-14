@@ -17,19 +17,33 @@
     <body>
         <div class="container-fluid" id="containerPrincipale">
             <div class="container-fluid" id="barraSopra">
-                <div id="hamCounter">0 ham</div>
+                <div>hello</div>
             </div>
-            <div class="container-fluid" id="containerSotto"
-                style="display: flex;">
-                <div class="col-8">
-                    <img src="pig.png" width="440" height="440" id="pig" draggable="false" onclick="clickPig()">
+            <div class="container-fluid" id="containerSotto" style="display: flex;">
+
+                <div class="col-7" id="containerPig">
+                    <div class="row" id="totalHamRow">
+                        <div id="hamCounter">0 hams</div><br>
+                        <div id="hamPerSecond" style="font-size: 25px;">Hams per second: 0</div>
+                    </div>
+                    <img src="pig.png" width="387" height="268" id="pig"
+                        draggable="false" onclick="clickPig()">
                 </div>
-                <div class="col">
-                    <p>ciao</p>
+                <div class="col" id="upgrade">
+                    <div class="row upgrades" id="upg1">
+                        <div class="col">img</div>
+                        <div class="col">testo</div>
+                        <div class="col">
+                            <button id="upgradeButton1" class="upgradeButtons" onclick="upgrade1()">15</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <button onclick="getUser()">Ottenere ID dal DB</button>
+            <div class="container-fluid" id="footer">
+                <p>Footer</p>
+            </div>
         </div>
     </body>
 </html>
