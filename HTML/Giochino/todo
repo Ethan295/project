@@ -13,8 +13,7 @@ barra sopra:
 moltiplicatore in base all clickspeed
 
 
-skin del maiale quando rankuppa (colori) e nome del maiale in base alla skin tipo: base pig
-
+skin del maiale quando rankuppa o rebirth (colori) e nome del maiale in base alla skin tipo: base pig
 
 achievements
 
@@ -24,5 +23,14 @@ se upgrade portati al lv 10 25 50 ecc danoo upgrade migliore
 
 trovare bei numeri in formatNumber()
 
+comprare *10 *30 *100 max 
+
+se spammi troppo con un autoclicker i prosciutti si buggano e magari mettere un massimo di click al secondo
 
 
+div di upgrade che appiaiono quando compri uno di quello nuovo e finche non hai i soldi è con i ??? in grigio come in cookie clicker
+
+
+resizable
+
+monetina d oro che dai ad un upgrade e da li in poi ti dara tipo *10 per sempre

@@ -112,9 +112,9 @@ function formatNumber(num) {
   if (num >= 1e93) {
     return (num / 1e93).toFixed(2) + "Untrigintillion";
   }
-  
 
-  
+
+
 
 
 
@@ -246,8 +246,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-$("#upgradeButton1").css("background-color", "red");
-$('#upgradeButton1').prop('disabled', true);
+  for (var i = 1; i <= 12; i++) {
+    $("#upgradeButton" + i).css("background-color", "red");
+    $("#upgradeButton" + i).prop("disabled", true);
+  }
 
 
 
@@ -257,8 +259,49 @@ $('#upgradeButton1').prop('disabled', true);
 
 
 var clickMultiplier = 1;
+
+var hamPerSecond = 0;
+
+
+
 var upg1Level = 0;
 var upg1Price = 15;
+
+var upg2Level = 0;
+var upg2Price = 150;
+
+var upg3Level = 0;
+var upg3Price = 1500;
+
+var upg4Level = 0;
+var upg4Price = 10000;
+
+var upg5Level = 0;
+var upg5Price = 120000;
+
+var upg6Level = 0;
+var upg6Price = 2500000;
+
+var upg7Level = 0;
+var upg7Price = 30000000;
+
+var upg8Level = 0;
+var upg8Price = 500000000;
+
+var upg9Level = 0;
+var upg9Price = 5000000000;
+
+var upg10Level = 0;
+var upg10Price = 40000000000;
+
+var upg11Level = 0;
+var upg11Price = 350000000000;
+
+var upg12Level = 0;
+var upg12Price = 5000000000000;
+
+
+
 
 
 
@@ -268,22 +311,22 @@ function clickPig() {
   updateHamCounter();
 
   var explosion = $("<div>").addClass("explosion")
-                             .css({
-                               left: event.clientX - 40 + "px",
-                               top: event.clientY - 40 + "px"
-                             });
+    .css({
+      left: event.clientX - 40 + "px",
+      top: event.clientY - 40 + "px"
+    });
 
   var hamImg = $("<img>").attr("src", "ham.png")
-                         .addClass("ham-img");
+    .addClass("ham-img");
   explosion.append(hamImg);
 
   var hamCounter = $("<span>").addClass("ham-counter")
-                              .text("+" + clickMultiplier);
+    .text("+" + clickMultiplier);
   explosion.append(hamCounter);
 
   $("body").append(explosion);
 
-  setTimeout(function() {
+  setTimeout(function () {
     explosion.remove();
   }, 520); // Aumentato il tempo di visualizzazione a 1 secondo
 }
@@ -299,6 +342,9 @@ function updateClickMultiplier() {
   $("#clickPowerDisplay").html("Click power: " + formatNumber(clickMultiplier));
 }
 
+function updateHamPerSecond() {
+  $("#hamPerSecondDisplay").html("Hams per second: " + formatNumber(hamPerSecond));
+}
 
 
 
@@ -339,15 +385,220 @@ function fetchOtherDataFromDatabase() {
 
 
 function upgrade1() {
-  upg1Level++;
-  ham -= upg1Price;
-  updateHamCounter();
-  clickMultiplier += 1;
-  updateClickMultiplier();
-  upg1Price = Math.round(upg1Price * 1.5); // Aggiorna il prezzo dell'aggiornamento
+  if (ham >= upg1Price) {
 
-  console.log(formatNumber(upg1Price));
-  $("#upgradeButton1").html(formatNumber(upg1Price));
+    upg1Level++;
+    ham -= upg1Price;
+
+    updateHamCounter();
+
+    clickMultiplier *= 10;
+
+    updateClickMultiplier();
+
+    upg1Price = Math.round(upg1Price * 1.2);
+
+    $("#upgradeButton1").html(formatNumber(upg1Price));
+  }
+
+}
+
+function upgrade2() {
+  if (ham >= upg2Price) {
+
+    upg2Level++;
+    ham -= upg2Price;
+
+    updateHamCounter();
+
+    hamPerSecond += 1;
+
+    updateHamPerSecond();
+
+    upg2Price = Math.round(upg2Price * 1.2);
+
+    $("#upgradeButton2").html(formatNumber(upg2Price));
+  }
+}
+
+function upgrade3() {
+  if (ham >= upg3Price) {
+
+    upg3Level++;
+    ham -= upg3Price;
+
+    updateHamCounter();
+
+    hamPerSecond += 10;
+
+    updateHamPerSecond();
+
+    upg3Price = Math.round(upg3Price * 1.2);
+
+    $("#upgradeButton3").html(formatNumber(upg3Price));
+  }
+}
+
+function upgrade4() {
+  if (ham >= upg4Price) {
+
+    upg4Level++;
+    ham -= upg4Price;
+
+    updateHamCounter();
+
+    hamPerSecond += 50;
+
+    updateHamPerSecond();
+
+    upg4Price = Math.round(upg4Price * 1.2);
+
+    $("#upgradeButton4").html(formatNumber(upg4Price));
+  }
+}
+
+function upgrade5() {
+  if (ham >= upg5Price) {
+
+    upg5Level++;
+    ham -= upg5Price;
+
+    updateHamCounter();
+
+    hamPerSecond += 500;
+
+    updateHamPerSecond();
+
+    upg5Price = Math.round(upg5Price * 1.2);
+
+    $("#upgradeButton5").html(formatNumber(upg5Price));
+  }
+}
+
+function upgrade6() {
+  if (ham >= upg6Price) {
+
+    upg6Level++;
+    ham -= upg6Price;
+
+    updateHamCounter();
+
+    hamPerSecond += 10000;
+
+    updateHamPerSecond();
+
+    upg6Price = Math.round(upg6Price * 1.2);
+
+    $("#upgradeButton6").html(formatNumber(upg6Price));
+  }
+}
+
+function upgrade7() {
+  if (ham >= upg7Price) {
+
+    upg7Level++;
+    ham -= upg7Price;
+
+    updateHamCounter();
+
+    hamPerSecond += 100000;
+
+    updateHamPerSecond();
+
+    upg7Price = Math.round(upg7Price * 1.2);
+
+    $("#upgradeButton7").html(formatNumber(upg7Price));
+  }
+}
+
+function upgrade8() {
+  if (ham >= upg8Price) {
+
+    upg8Level++;
+    ham -= upg8Price;
+
+    updateHamCounter();
+
+    hamPerSecond += 2000000;
+
+    updateHamPerSecond();
+
+    upg8Price = Math.round(upg8Price * 1.2);
+
+    $("#upgradeButton8").html(formatNumber(upg8Price));
+  }
+}
+
+function upgrade9() {
+  if (ham >= upg9Price) {
+
+    upg9Level++;
+    ham -= upg9Price;
+
+    updateHamCounter();
+
+    hamPerSecond += 15000000;
+
+    updateHamPerSecond();
+
+    upg9Price = Math.round(upg9Price * 1.2);
+
+    $("#upgradeButton9").html(formatNumber(upg9Price));
+  }
+}
+
+function upgrade10() {
+  if (ham >= upg10Price) {
+
+    upg10Level++;
+    ham -= upg10Price;
+
+    updateHamCounter();
+
+    hamPerSecond += 150000000;
+
+    updateHamPerSecond();
+
+    upg10Price = Math.round(upg10Price * 1.2);
+
+    $("#upgradeButton10").html(formatNumber(upg10Price));
+  }
+}
+
+function upgrade11() {
+  if (ham >= upg11Price) {
+
+    upg11Level++;
+    ham -= upg11Price;
+
+    updateHamCounter();
+
+    hamPerSecond += 2000000000;
+
+    updateHamPerSecond();
+
+    upg11Price = Math.round(upg11Price * 1.2);
+
+    $("#upgradeButton11").html(formatNumber(upg11Price));
+  }
+}
+
+function upgrade12() {
+  if (ham >= upg12Price) {
+
+    upg12Level++;
+    ham -= upg12Price;
+
+    updateHamCounter();
+
+    hamPerSecond += 50000000000;
+
+    updateHamPerSecond();
+
+    upg12Price = Math.round(upg12Price * 1.2);
+
+    $("#upgradeButton12").html(formatNumber(upg12Price));
+  }
 }
 
 
@@ -362,13 +613,57 @@ function upgrade1() {
 
 function onChangeHam(newValue) {
 
+  var upgrades = [
+    { buttonId: "upgradeButton1", price: upg1Price },
+    { buttonId: "upgradeButton2", price: upg2Price },
+    { buttonId: "upgradeButton3", price: upg3Price },
+    { buttonId: "upgradeButton4", price: upg4Price },
+    { buttonId: "upgradeButton5", price: upg5Price },
+    { buttonId: "upgradeButton6", price: upg6Price },
+    { buttonId: "upgradeButton7", price: upg7Price },
+    { buttonId: "upgradeButton8", price: upg8Price },
+    { buttonId: "upgradeButton9", price: upg9Price },
+    { buttonId: "upgradeButton10", price: upg10Price },
+    { buttonId: "upgradeButton11", price: upg11Price },
+    { buttonId: "upgradeButton12", price: upg12Price }
+  ];
+
+
+  upgrades.forEach(function (upgrade) {
+    var button = $("#" + upgrade.buttonId);
+    var isEnabled = upgrade.price <= ham;
+
+
+    button.css("background-color", isEnabled ? "green" : "red").prop("disabled", !isEnabled);
+  });
+}
+
+
+
+/*
+function onChangeHam(newValue) {
+
   if (upg1Price <= ham) {
     $("#upgradeButton1").css("background-color", "green").prop("disabled", false);
   } else {
     $("#upgradeButton1").css("background-color", "red").prop("disabled", true);
   }
+  if (upg2Price <= ham) {
+    $("#upgradeButton2").css("background-color", "green").prop("disabled", false);
+  } else {
+    $("#upgradeButton2").css("background-color", "red").prop("disabled", true);
+  }
 }
+*/
 
 
 
 
+
+function increseHamPerSecond() {
+
+  ham += hamPerSecond/2;
+
+  updateHamCounter();
+}
+setInterval(increseHamPerSecond, 500);
