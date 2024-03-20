@@ -1,4 +1,11 @@
-document.addEventListener('contextmenu', event => event.preventDefault());
+
+
+
+
+
+
+
+//document.addEventListener('contextmenu', event => event.preventDefault()); disabilita il tasto destro del mouse
 
 
 //definisco ham
@@ -18,11 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
+$("#upgradeButton1").css("background-color", "red");
+$('#upgradeButton1').prop('disabled', true);
 
-
-
-  document.getElementById('upgradeButton1').classList.add('disabled');
-  document.getElementById("upgradeButton1").disabled = true;
 
 
   ham = 0;
@@ -30,19 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-var clickMultiplier = 100;
-
-
-
-
-
-
-
-
-
-
-
-
+var clickMultiplier = 1;
+var upg1Level = 0;
+var upg1Price = 15;
 
 
 
@@ -51,25 +46,24 @@ function clickPig() {
   ham += clickMultiplier;
   updateHamCounter();
 
-  var explosion = document.createElement("div");
-  explosion.className = "explosion";
-  explosion.style.left = event.clientX - 40 + "px";
-  explosion.style.top = event.clientY - 40 + "px";
+  var explosion = $("<div>").addClass("explosion")
+                             .css({
+                               left: event.clientX - 40 + "px",
+                               top: event.clientY - 40 + "px"
+                             });
 
-  var hamImg = document.createElement("img");
-  hamImg.src = "ham.png";
-  hamImg.className = "ham-img";
-  explosion.appendChild(hamImg);
+  var hamImg = $("<img>").attr("src", "ham.png")
+                         .addClass("ham-img");
+  explosion.append(hamImg);
 
-  var hamCounter = document.createElement("span");
-  hamCounter.className = "ham-counter";
-  hamCounter.textContent = "+" + clickMultiplier;
-  explosion.appendChild(hamCounter);
+  var hamCounter = $("<span>").addClass("ham-counter")
+                              .text("+" + clickMultiplier);
+  explosion.append(hamCounter);
 
-  document.body.appendChild(explosion);
+  $("body").append(explosion);
 
-  setTimeout(function () {
-    document.body.removeChild(explosion);
+  setTimeout(function() {
+    explosion.remove();
   }, 520); // Aumentato il tempo di visualizzazione a 1 secondo
 }
 
@@ -80,7 +74,19 @@ function updateHamCounter() {
   } else {
     formattedHam = ham;
   }
-  document.getElementById("hamCounter").innerHTML = formattedHam + " hams";
+  $("#hamCounter").html(formattedHam + " hams");
+}
+
+
+
+function updateClickMultiplier() {
+  var formattedClickMultiplier;
+  if (clickMultiplier >= 1000) {
+    formattedClickMultiplier = numeral(clickMultiplier).format('0,0.00a');
+  } else {
+    formattedClickMultiplier = clickMultiplier;
+  }
+  $("#clickPowerDisplay").html("Click power: " + formattedClickMultiplier);
 }
 
 
@@ -121,11 +127,23 @@ function fetchOtherDataFromDatabase() {
 
 
 
+
 function upgrade1() {
+  upg1Level++;
+  ham -= upg1Price;
+  updateHamCounter();
+  clickMultiplier += 1;
+  updateClickMultiplier();
+  upg1Price = Math.round(upg1Price * 1.5); // Aggiorna il prezzo dell'aggiornamento
 
+  var valoreFormattato;
+  if (upg1Price >= 1000) {
+    valoreFormattato = numeral(upg1Price).format('0,0.00a');
+  } else {
+    valoreFormattato = upg1Price;
+  }
 
-  console.log("Upgrade 1");
-
+  $("#upgradeButton1").html(valoreFormattato);
 }
 
 
@@ -134,18 +152,17 @@ function upgrade1() {
 
 
 
+
+
+
+
 function onChangeHam(newValue) {
-  var upg1 = document.getElementById('upgradeButton1').innerHTML;
 
-  if (upg1 < ham) {
-    document.getElementById('upgradeButton1').classList.remove('disabled');
-    document.getElementById("upgradeButton1").disabled = false;
-    upgrade1();
+  if (upg1Price <= ham) {
+    $("#upgradeButton1").css("background-color", "green").prop("disabled", false);
   } else {
-    document.getElementById('upgradeButton1').classList.add('disabled');
-    document.getElementById("upgradeButton1").disabled = true;
+    $("#upgradeButton1").css("background-color", "red").prop("disabled", true);
   }
-
 }
 
 
