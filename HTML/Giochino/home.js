@@ -392,7 +392,7 @@ function upgrade1() {
 
     updateHamCounter();
 
-    clickMultiplier *= 10;
+    clickMultiplier += 1;
 
     updateClickMultiplier();
 
