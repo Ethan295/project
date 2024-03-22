@@ -14,13 +14,16 @@
         <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="home.js"></script>
-    
+
     </head>
     <body>
         <div class="container-fluid" id="containerPrincipale">
             <div class="container-fluid" id="barraSopra">
                 <div>hello</div>
             </div>
+
+            <div id="levelPopup"></div>
+
             <div class="container-fluid" id="containerSotto"
                 style="display: flex;">
 
@@ -31,9 +34,14 @@
                             style="font-size: 25px;">Hams per
                             second: 0</div>
                     </div>
-                    <img src="pig.png" width="387" height="268" id="pig"
-                        draggable="false" onclick="clickPig()">
+                    <div class="row" style="text-align: center;">
+                        <img src="img/pig.png" width="387" height="268"
+                            id="pig"
+                            draggable="false" onclick="clickPig()">
+                    </div>
+
                 </div>
+
                 <div class="col" id="upgrade">
 
                     <div class="row" id="clickPowerDisplay"
@@ -42,12 +50,13 @@
                     </div>
 
                     <div class="row upgrades" id="upg1">
-                        <div class="col"><img src="upg1.png" width="80"
-                                height="80"
+                        <div class="col"><img src="img/upg1.png" width="100"
+                                width="100"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>Cursor</strong> <br>
-                            +1 ham per click
+                            <lvl class="lvl" id="upg1Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg1">+1 ham per click</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton1"
@@ -57,12 +66,13 @@
                     </div>
 
                     <div class="row upgrades" id="upg2">
-                        <div class="col"><img src="upg2.png" width="80"
-                                height="80" id="upg2Img"
+                        <div class="col"><img src="img/upg2.png" width="100"
+                                height="100" id="upg2Img"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>Pig Farmer</strong> <br>
-                            +1 ham per second
+                            <lvl class="lvl" id="upg2Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg2">+1 ham per second</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton2"
@@ -72,12 +82,13 @@
                     </div>
 
                     <div class="row upgrades" id="upg3">
-                        <div class="col"><img src="upg3.png" width="80"
-                                height="80" id="upg3Img"
+                        <div class="col"><img src="img/upg3.png" width="100"
+                                width="100" id="upg3Img"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>Pig Factory</strong> <br>
-                            +10 ham per second
+                            <lvl class="lvl" id="upg3Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg3">+10 ham per second</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton3"
@@ -87,12 +98,13 @@
                     </div>
 
                     <div class="row upgrades" id="upg4">
-                        <div class="col"><img src="upg4.png" width="80"
-                                height="80" id="upg4Img"
+                        <div class="col"><img src="img/upg4.png" width="100"
+                                width="100" id="upg4Img"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>Pig Cult</strong> <br>
-                            +50 ham per second
+                            <lvl class="lvl" id="upg4Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg4">+50 ham per second</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton4"
@@ -102,12 +114,13 @@
                     </div>
 
                     <div class="row upgrades" id="upg5">
-                        <div class="col"><img src="upg5.png" width="80"
-                                height="80" id="upg5Img"
+                        <div class="col"><img src="img/upg5.png" width="100"
+                                width="100" id="upg5Img"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>Pig Pump</strong> <br>
-                            +500 ham per second
+                            <lvl class="lvl" id="upg5Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg5">+500 ham per second</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton5"
@@ -117,12 +130,13 @@
                     </div>
 
                     <div class="row upgrades" id="upg6">
-                        <div class="col"><img src="upg6.png" width="80"
-                                height="80" id="upg6Img"
+                        <div class="col"><img src="img/upg6.png" width="100"
+                                width="100" id="upg6Img"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>Pig Mine</strong> <br>
-                            +10K ham per second
+                            <lvl class="lvl" id="upg6Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg6">+10K ham per second</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton6"
@@ -132,12 +146,13 @@
                     </div>
 
                     <div class="row upgrades" id="upg7">
-                        <div class="col"><img src="upg7.png" width="80"
-                                height="80" id="upg7Img"
+                        <div class="col"><img src="img/upg7.png" width="100"
+                                width="100" id="upg7Img"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>Pig Pyramid</strong> <br>
-                            +100K ham per second
+                            <lvl class="lvl" id="upg7Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg7">+100K ham per second</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton7"
@@ -147,12 +162,13 @@
                     </div>
 
                     <div class="row upgrades" id="upg8">
-                        <div class="col"><img src="upg8.png" width="80"
-                                height="80" id="upg8Img"
+                        <div class="col"><img src="img/upg8.png" width="100"
+                                width="100" id="upg8Img"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>Time Pig</strong> <br>
-                            +2M ham per second
+                            <lvl class="lvl" id="upg8Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg8">+2M ham per second</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton8"
@@ -162,12 +178,13 @@
                     </div>
 
                     <div class="row upgrades" id="upg9">
-                        <div class="col"><img src="upg9.png" width="80"
-                                height="80" id="upg9Img"
+                        <div class="col"><img src="img/upg9.png" width="100"
+                                width="100" id="upg9Img"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>Pig Temple</strong> <br>
-                            +15M ham per second
+                            <lvl class="lvl" id="upg9Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg9">+15M ham per second</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton9"
@@ -177,12 +194,14 @@
                     </div>
 
                     <div class="row upgrades" id="upg10">
-                        <div class="col"><img src="upg10.png" width="80"
-                                height="80" id="upg10Img"
+                        <div class="col"><img src="img/upg10.png"
+                                width="100"
+                                width="100" id="upg10Img"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>Pig Planet</strong> <br>
-                            +150M ham per second
+                            <lvl class="lvl" id="upg10Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg10">+150M ham per second</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton10"
@@ -192,12 +211,14 @@
                     </div>
 
                     <div class="row upgrades" id="upg11">
-                        <div class="col"><img src="upg11.png" width="80"
-                                height="80" id="upg11Img"
+                        <div class="col"><img src="img/upg11.png"
+                                width="100"
+                                width="100" id="upg11Img"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>Pig Universe</strong> <br>
-                            +2B ham per second
+                            <lvl class="lvl" id="upg11Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg11">+2B ham per second</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton11"
@@ -207,12 +228,14 @@
                     </div>
 
                     <div class="row upgrades" id="upg12">
-                        <div class="col"><img src="upg12.png" width="80"
-                                height="80" id="upg12Img"
+                        <div class="col"><img src="img/upg12.png"
+                                width="100"
+                                width="100" id="upg12Img"
                                 draggable="false"></div>
                         <div class="col-5" style="font-size: 22px;">
                             <strong>God Pig</strong> <br>
-                            +50B ham per second
+                            <lvl class="lvl" id="upg12Lvl">Lvl 0</lvl> <br>
+                            <hamProduce id="hamProduceUpg12">+50B ham per second</hamProduce>
                         </div>
                         <div class="col colUpg">
                             <button id="upgradeButton12"
@@ -222,6 +245,7 @@
                     </div>
 
                 </div>
+
             </div>
 
             <div class="container-fluid" id="footer">

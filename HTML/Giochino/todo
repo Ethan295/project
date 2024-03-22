@@ -23,7 +23,7 @@ se upgrade portati al lv 10 25 50 ecc danoo upgrade migliore
 
 trovare bei numeri in formatNumber()
 
-comprare *10 *30 *100 max 
+comprare *10 *30 *100 max devono essere dei for che chiamano la funzione se no sono problemi
 
 se spammi troppo con un autoclicker i prosciutti si buggano e magari mettere un massimo di click al secondo
 
@@ -34,3 +34,11 @@ div di upgrade che appiaiono quando compri uno di quello nuovo e finche non hai 
 resizable
 
 monetina d oro che dai ad un upgrade e da li in poi ti dara tipo *10 per sempre
+
+se schermo è piccolo upgrade vanno sotto il maiale se tolgo display flex a containerSotto fa robe belle
+
+animazione al tier up di un upgrade
+
+estetica popup
+
+sistemare popup lunghezza giusta cambiare altezza
